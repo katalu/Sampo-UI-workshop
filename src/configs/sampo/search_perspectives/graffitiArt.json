@@ -1,0 +1,511 @@
+{
+    "id": "graffitiArt",
+    "endpoint": {
+        "url": "https://fuseki.dipintra.it/wendangSampo/sparql",
+        "useAuth": false,
+        "prefixesFile": "SparqlQueriesPrefixes.js"
+    },
+    "sparqlQueriesFile": "SparqlQueriesGraffitiArt.js",
+    "baseURI": "http://wendang-project.github.io/data/item",
+    "URITemplate": "<BASE_URI>/<LOCAL_ID>",
+    "facetClass": "ns3:Q17514",
+    "frontPageImage": "main_page/pic2.jpg",
+    "frontPageImagePosition": "60% 40%",
+    "searchMode": "faceted-search",
+    "defaultActiveFacets": [
+        "prefLabel"
+],
+    "defaultTab": "table",
+    "defaultInstancePageTab": "table",
+
+    "maps": {
+        "graffitiArtCreationPlaces": {
+            "center": [22.43, 10.37],
+            "zoom": 2
+        }
+    },
+
+    "resultClasses": {
+        "graffitiArt": {
+            "paginatedResultsConfig": {
+                "tabID": 0,
+                "component": "ResultTable",
+                "tabPath": "table",
+                "tabIcon": "ViewList",
+                "propertiesQueryBlock": "graffitiArtProperties",
+                "pagesize": 15,
+                "sortBy": null,
+                "sortDirection": null
+            },
+            "instanceConfig": {
+                "propertiesQueryBlock": "graffitiArtProperties",
+                "instancePageResultClasses": {
+                    "instancePageTable": {
+                        "tabID": 0,
+                        "component": "InstancePageTable",
+                        "tabPath": "table",
+                        "tabIcon": "CalendarViewDay"
+                    } 
+                }
+            }
+        },
+        "graffitiArtImages": {
+            "tabID": 1,
+            "component": "ImageGridResults",
+            "tabPath": "imagesearch",
+            "tabIcon": "ImageSearch",
+            "sparqlQuery": "graffitiArtImagesQuery",
+            "facetClass": "graffitiArt",
+            "filterTarget": "graffitiArt"
+        },
+        "graffitiArtCreationPlaces": {
+            "tabID": 2,
+            "component": "LeafletMap",
+            "tabPath": "graffitiArtCreationLocations",
+            "tabIcon": "LocationOn",
+            "sparqlQuery": "graffitiArtCreationPlacesQuery",
+            "facetClass": "graffitiArt",
+            "filterTarget": "graffitiArt",
+            "resultMapper": "mapPlaces",
+            "showInstanceCountInClusters": true,
+            "instanceConfig": {
+                "propertiesQueryBlock": "creationPlaceGraffitiArtInfoWindow",
+  "relatedInstances": "graffitiArtCreatedAtPlace",
+  "filterTarget": "related__id",
+  "createPopUpContent": "createPopUpContentAs"
+            }
+        },
+        "graffitiArtByProperty": {
+            "tabID": 3,
+            "component": "ApexCharts",
+            "doNotRenderOnMount": true,
+            "tabPath": "pie_chart",
+            "tabIcon": "PieChart",
+            "facetClass": "graffitiArt",
+            "dropdownForResultClasses": true,
+            "defaultResultClass": "graffitiArtByMaterial",
+            "resultClasses": {
+                "graffitiArtByMaterial": {
+                    "sparqlQuery": "graffitiArtByMaterialQuery",
+                    "filterTarget": "graffitiArt",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.01,
+                    "dropdownForChartTypes": true,
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "graffitiArtByTool": {
+                    "sparqlQuery": "graffitiArtByToolQuery",
+                    "filterTarget": "graffitiArt",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.01,
+                    "dropdownForChartTypes": true,
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                }
+            }
+        }    
+    },
+    "properties": [
+        {
+            "id": "image",
+            "valueType": "image",
+            "previewImageHeight": 150,
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "hideHeader": true,
+            "onlyOnInstancePage": false
+        },
+        {
+            "id": "uri",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "prefLabel",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "minWidth": 300,
+            "linkStyle": "primary",
+            "group": "identification"
+        },
+        {
+            "id": "titleOtherLang",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "simpleList": true,
+            "minWidth": 250,
+            "onlyOnInstancePage": true, 
+            "group": "identification"
+        },
+        {
+            "id": "description",
+            "valueType": "object",
+            "collapsedMaxWords": 60,
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "identification"
+        },
+        {
+            "id": "creator",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "mainTableSimpleList": true,
+            "instanceInlineList": true,
+            "inlineSeparator": ", ",
+            "linkStyle": "primary",
+            "onlyOnInstancePage": false,
+            "disableSort": true,
+            "minWidth": 150,
+            "group": "creation"
+        },
+        {
+            "id": "graffitiArtType",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "mainInlineList": true,
+            "instanceInlineList": true,
+            "inlineSeparator": ", ",
+            "linkStyle": "primary",
+            "onlyOnInstancePage": false,
+            "disableSort": true,
+            "minWidth": 150,
+            "group": "identification"
+        },
+        {
+            "id": "graffitiArtStyle",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "instanceInlineList": true,
+            "inlineSeparator": ", ",
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "formal description"
+        },
+        {
+            "id": "graffitiArtGenre",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "instanceInlineList": true,
+            "inlineSeparator": ", ",
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "formal description"
+        },
+        {
+            "id": "date",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": false,
+            "disableSort": true,
+            "minWidth": 70,
+            "group": "creation"
+        },
+        {
+            "id": "location",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "instanceInlineList": true,
+            "inlineSeparator": ", ",
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "creation"
+        },
+        {
+            "id": "streetAddress",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "creation"
+        },
+        {
+            "id": "material",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "instanceInlineList": true,
+            "inlineSeparator": ", ",
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "formal description"
+        },
+        {
+            "id": "tool",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "instanceInlineList": true,
+            "inlineSeparator": ", ",
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "formal description"
+        },
+        {
+            "id": "width",
+            "valueType": "object",
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "formal description"
+        },
+        {
+            "id": "height",
+            "valueType": "object",
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "formal description"
+        },
+        {
+            "id": "colour",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "instanceInlineList": true,
+            "inlineSeparator": ", ",
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "formal description"
+        },
+        {
+            "id": "hasSeal",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "formal description"
+        },
+        {
+            "id": "hasColophon",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "formal description"
+        },
+        {
+            "id": "hasChineseConcept",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "instanceInlineList": true,
+            "inlineSeparator": ", ",
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "subject"
+        },
+        {
+            "id": "hasChineseVisualElement",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "instanceInlineList": true,
+            "inlineSeparator": ", ",
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "subject"
+        },
+        {
+            "id": "hasOtherVisualElement",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "instanceInlineList": true,
+            "inlineSeparator": ", ",
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "subject"
+        },
+        {
+            "id": "depicts",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "instanceInlineList": true,
+            "inlineSeparator": ", ",
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "subject"
+        },
+        {
+            "id": "inspiredBy",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "instanceInlineList": true,
+            "inlineSeparator": ", ",
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "subject"
+        },
+        {
+            "id": "partOfSeries",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "simpleList": true,
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "related"
+        },
+        {
+            "id": "commissioner",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "instanceInlineList": true,
+            "inlineSeparator": ", ",
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "creation"
+        },
+        {
+            "id": "hasUnit",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "simpleList": true,
+            "sortValues": true,
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "related"
+        }       
+    ],
+        "facets": {
+            "prefLabel": {
+                "containerClass": "one",
+                "facetType": "text",
+                "filterType": "textFilter",
+                "textQueryType": "regex",
+                "sortByPredicate": "ns2:P1476",
+                "textQueryProperty": "ns2:P1476"
+            },
+            "graffitiArtType": {
+                "containerClass": "ten",
+                "facetType": "list",
+                "filterType": "uriFilter",
+                "predicate": "ns1:hasGraffitiType",
+                "labelPattern": "OPTIONAL { ?id rdfs:label ?lbl } BIND(COALESCE(?lbl, ?id) AS ?prefLabel)",
+                "searchField": false,
+                "sortButton": true,
+                "sortBy": "instanceCount",
+                "sortByPredicate": "ns1:hasGraffitiType/rdfs:label",
+                "sortDirection": "desc",
+                "showInFacetPanel": true, 
+                "pieChartButton": false
+            },
+            "graffitiArtStyle": {
+                "containerClass": "ten",
+                "facetType": "list",
+                "filterType": "uriFilter",
+                "predicate": "ns1:hasGraffitiStyle",
+                "labelPattern": "OPTIONAL { ?id rdfs:label ?lbl } BIND(COALESCE(?lbl, ?id) AS ?prefLabel)",
+                "searchField": false,
+                "sortButton": true,
+                "sortBy": "instanceCount",
+                "sortByPredicate": "ns1:hasGraffitiStyle/rdfs:label",
+                "sortDirection": "desc",
+                "showInFacetPanel": true, 
+                "pieChartButton": false
+            },
+            "graffitiArtGenre": {
+                "containerClass": "ten",
+                "facetType": "list",        
+                "filterType": "uriFilter",
+                "predicate": "ns1:hasGraffitiGenre",
+                "labelPattern": "OPTIONAL { ?id rdfs:label ?lbl } BIND(COALESCE(?lbl, ?id) AS ?prefLabel)",
+                "searchField": false,
+                "sortButton": true,
+                "sortBy": "instanceCount",
+                "sortByPredicate": "ns1:hasGraffitiGenre/rdfs:label",
+                "sortDirection": "desc",
+                "showInFacetPanel": true, 
+                "pieChartButton": false
+            },
+            "material": {
+                "containerClass": "ten",
+                "facetType": "list",
+                "filterType": "uriFilter",
+                "predicate": "ns2:P186",
+                "labelPattern": "OPTIONAL { ?id rdfs:label ?lbl } BIND(COALESCE(?lbl, ?id) AS ?prefLabel)",
+                "searchField": false,
+                "sortButton": true,
+                "sortBy": "instanceCount",
+                "sortByPredicate": "ns2:P186/rdfs:label",
+                "sortDirection": "desc",
+                "showInFacetPanel": true, 
+                "pieChartButton": false
+            },
+            "tool": {
+                "containerClass": "ten",
+                "facetType": "list",
+                "filterType": "uriFilter",
+                "predicate": "ns1:madeUsingTool",
+                "labelPattern": "OPTIONAL { ?id rdfs:label ?lbl } BIND(COALESCE(?lbl, ?id) AS ?prefLabel)",
+                "searchField": false,
+                "sortButton": true,
+                "sortBy": "instanceCount",
+                "sortByPredicate": "ns1:madeUsingTool/rdfs:label",
+                "sortDirection": "desc",
+                "showInFacetPanel": true, 
+                "pieChartButton": false
+            },
+            "location": {
+                "containerClass": "ten",
+                "facetType": "list",
+                "filterType": "uriFilter",
+                "predicate": "ns2:P276",
+                "labelPattern": "OPTIONAL { ?id rdfs:label ?lbl } BIND(COALESCE(?lbl, ?id) AS ?prefLabel)",
+                "searchField": false,
+                "sortButton": true,
+                "sortBy": "instanceCount",
+                "sortByPredicate": "ns2:P276/rdfs:label",
+                "sortDirection": "desc",
+                "showInFacetPanel": true, 
+                "pieChartButton": false
+            }
+
+    }
+}

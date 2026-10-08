@@ -1,0 +1,1337 @@
+{
+  "languageLabel": "English",
+  "html": {
+    "title": "WenDAng - WRITE Digital Archive",
+    "description": "The Sampo-UI framework makes it possible to create highly customizable, user-friendly, and responsive user interfaces using current state-of-the-art JavaScript libraries and data from SPARQL endpoints."
+  },
+  "appTitle": {
+    "short": "WenDAng",
+    "mobile": "WenDAng",
+    "long": "WenDAng",
+    "subheading": "WRITE Digital Archive"
+  },
+  "appDescription1": "Sampo is a web service for searching and studying place names. The search results can be viewed as a table, on maps, and as statistical distributions. Historical and current background maps are provided.",
+  "appDescription2": "Start by choosing source dataset(s) and input a place name on the search field. Alternatively you can search by area.",
+  "selectPerspective": "WRITE COLLECTIONS",
+  "backendErrorText": "One of the backend services is not available at the moment. Please try again later.",
+  "infoHeader": {
+    "toggleInstructions": ""
+  },
+  "topBar": {
+    "feedback": "feedback",
+    "info": {
+      "info": "Info",
+      "blog": "Project blog",
+      "blogUrl": "https://seco.cs.aalto.fi/tools/sampo-ui/",
+      "aboutThePortal": "About the Portal"
+    },
+    "searchBarPlaceHolder": "Search across the archive",
+    "searchBarPlaceHolderShort": "Search",
+    "instructions": "instructions"
+  },
+  "facetBar": {
+    "results": "Result",
+    "filters": "Filters",
+    "activeFilters": "Active filters:",
+    "removeAllFilters": "Remove all",
+    "narrowDownBy": "Filter by",
+    "filterOptions": "Filter options",
+    "filterByName": "Filter by name",
+    "filterByBoundingBox": "Filter by bounding box",
+    "selectionOptions": "Selection options",
+    "selectAlsoSubconcepts": "Automatically select all subconcepts",
+    "doNotSelectSubconcepts": "Do not select subconcepts",
+    "sortingOptions": "Sorting options",
+    "sortAlphabetically": "Sort alphabetically",
+    "sortByNumberOfSearchResults": "Sort by number of search results",
+    "useDisjunction": "Use logical OR between selections",
+    "useConjuction": "Use logical AND between selections",
+    "minYear": "Min year",
+    "maxYear": "Max year",
+    "min": "Min",
+    "max": "Max",
+    "facetSearchFieldPlaceholder": "Search...",
+    "applyFacetSelection": "apply",
+    "pieChart": {
+      "tooltip": "Pie chart"
+    },
+    "barChart": {
+      "tooltip": "Bar chart",
+      "language": {
+        "title": "Language",
+        "xaxisTitle": "Language",
+        "yaxisTitle": "Manuscript count",
+        "seriesTitle": "Manuscript count"
+      }
+    },
+    "lineChart": {
+      "tooltip": "Line chart",
+      "productionTimespan": {
+        "title": "Manuscript production by decade",
+        "xaxisTitle": "Decade",
+        "yaxisTitle": "Manuscript count",
+        "seriesTitle": "Manuscript count"
+      }
+    }
+  },
+  "tabs": {
+    "table": "browse table",
+    "map": "map",
+    "peopleWorkLocations": "work locations",
+    "peopleBirthLocations": "birth locations",
+    "visualArtworksCreationLocations": "creation locations",
+    "performingArtsCreationLocations": "event locations",
+    "graffitiArtCreationLocations": "creation locations",
+    "decorativeAppliedArtsCreationLocations": "creation locations",
+    "exhibitionCreationLocations": "event locations",
+    "performingArtsByDecade": "event trends",
+    "exhibitionTimeline": "browse by date",
+    "artworksSeriesTimeline": "browse by date",
+    "pie_chart": "pie/bar chart",
+    "production_places": "production places",
+    "production_places_heatmap": "production heatmap",
+    "last_known_locations": "last known locations",
+    "migrations": "migrations",
+    "network": "network",
+    "export": "export",
+    "production_dates": "production dates",
+    "event_dates": "event dates",
+    "map_clusters": "clustered map",
+    "map_markers": "map",
+    "heatmap": "heatmap",
+    "statistics": "statistics",
+    "emloLetterNetwork": "Network of letters",
+    "emloSentReceived": "Sent and received letters",
+    "download": "download",
+    "recommendations": "recommendations",
+    "share": "share", 
+    "imagesearch": "browse images"
+  },
+  "table": {
+    "rowsPerPage": "Rows per page",
+    "of": "of"
+  },
+  "lineChart": {
+    "productionCount": "Production",
+    "transferCount": "Transfer of custody",
+    "observationCount": "Observation",
+    "sentCount": "Sent",
+    "receivedCount": "Received",
+    "allCount": "All"
+  },
+    "apexCharts": {
+      "grouping": "Sort by:",
+      "property": "Property:",
+      "chartType": "Chart type:",
+      "pie": "Pie chart",
+      "bar": "Bar chart",
+      "resultClasses": {
+        "visualArtsByMaterial": "material/support",
+        "visualArtsByTool": "tool",
+        "graffitiArtByMaterial": "material/support",
+        "graffitiArtByTool": "tool",
+        "decorativeAppliedArtsByMaterial": "material/support",
+        "decorativeAppliedArtsByTool": "tool",
+        "CWUbyColour": "colour",
+        "CWUbyMaterial": "material/support",
+        "CWUbyTool": "tool",
+        "CWUbyWritingSystem": "writing system",
+        "CWUbyScriptStyle": "script style",
+        "peopleByGender": "gender",
+        "peopleByRole": "occupation",
+        "peopleByCalligraphicTraining": "calligraphic training",
+        "peopleByFieldOfStudy": "field of study"
+      }
+    },
+  "exportToYasgui": "open the result table query in yasgui sparql editor",
+  "openInLinkedDataBrowser": "open in linked data browser",
+  "resultsAsCSV": "download the search results as a CSV table",
+  "facets": {
+    "dateFacet": {
+      "invalidDate": "Epäkelpo päivämäärä.",
+      "toBeforeFrom": "Alkupäivämäärän täytyy olla ennen loppupäivämäärää.",
+      "minDate": "Aikaisin sallittu päivämäärä on {minDate}",
+      "maxDate": "Myöhäisin sallittu päivämäärä on {maxDate}",
+      "cancel": "Peruuta",
+      "fromLabel": "Alku",
+      "toLabel": "Loppu"
+    },
+    "textFacet": {
+      "inputLabel": "Etsi nimellä"
+    },
+    "sliderFacet": {
+      "invalidStartOrEnd": "Min value must be smaller than max value. The smallest value can be {min} and the largest value can be {max}."
+    }
+  },
+  "leafletMap": {
+    "basemaps": {
+      "mapbox": {
+        "light-v10": "Mapbox Light (OpenStreetMap)"
+      },
+      "googleRoadmap": "Google Maps",
+      "topographicalMapNLS": "Topographical map (National Land Survey of Finland)",
+      "backgroundMapNLS": "Background map (National Land Survey of Finland)",
+      "airMapNLS": "Aerial map (National Land Survey of Finland)"
+    },
+    "externalLayers": {
+      "WFS_MV_Kulttuuriymparisto:Arkeologiset_kohteet_alue": "Register of Archaeological Sites, areas (Finnish Heritage Agency)",
+      "WFS_MV_Kulttuuriymparisto:Arkeologiset_kohteet_piste": "Register of Archaeological Sites, points (Finnish Heritage Agency)",
+      "WFS_MV_KulttuuriymparistoSuojellut:Muinaisjaannokset_alue": "Register of Archaeological Sites, areas (Finnish Heritage Agency)",
+      "WFS_MV_KulttuuriymparistoSuojellut:Muinaisjaannokset_piste": "Register of Archaeological Sites, points (Finnish Heritage Agency)",
+      "fhaLidar": "Elevation model (Finnish Heritage Agency)",
+      "karelianMaps": "Karelian maps, 1:100 000 topographic (SeCo)",
+      "senateAtlas": "Senate atlas, 1:21 000 topographic (SeCo)",
+      "kotus:pitajat": "Finnish parishes in 1938 (Institute for the Languages of Finland)",
+      "kotus:rajat-sms-alueet": "Dialectical regions in Finland (Institute for the Languages of Finland)",
+      "kotus:rajat-sms-alueosat": "Dialectical subregions in Finland (Institute for the Languages of Finland)",
+      "kotus:rajat-lansi-ita": "Border between western and eastern dialects in Finland (Institute for the Languages of Finland)"
+    },
+    "mapModeButtons": {
+      "markers": "Markers",
+      "heatmap": "Heatmap"
+    },
+    "wrongZoomLevel": "The map zoom level has to at least 11",
+    "wrongZoomLevelFHA": "The map zoom level has to be at least 13 in order to show this layer",
+    "tooManyResults": "More than 500 results, please use clustered map or heatmap"
+  },
+  "instancePageGeneral": {
+    "introduction": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> This landing page provides a human-readable summary of the data points that link to this {entity}. The data included in this summary reflect only those data points used in the MMM Portal. Click the Open in Linked Data Browser on button on the Export tab to view the complete set of classes and properties linked to this record. </p> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> To cite this record, use its url. You can use also use the url to return directly to the record at any time. </p>",
+    "repetition": "<h6 class=\"MuiTypography-root MuiTypography-h6\"> Repetition of data </h6> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> The same or similar data may appear within a single data field multiple times. This repetition occurs due to the merging of multiple records from different datasets to create the MMM record. </p>"
+  },
+  "deckGlMap": {
+    "arcColouring": "Arc colouring:",
+    "showMoreInformation": "Click to show more information.",
+    "placesMsMigrations": {
+      "legendTitle": "Arc colouring",
+      "legendFrom": "Manuscript production place",
+      "legendTo": "Last known location",
+      "from": "Production place:",
+      "to": "Last known location:",
+      "count": "Manuscript count",
+      "listHeadingSingleInstance": "Manuscript:",
+      "listHeadingMultipleInstances": "Manuscripts:"
+    }
+  },
+  "perspectives": {
+    "fullTextSearch": {
+      "properties": {
+        "prefLabel": {
+          "label": "Title"
+        },
+        "type": {
+          "label": "Type"
+        }
+      }
+    },
+    "person": {
+      "label": "People",
+      "facetResultsType": "people",
+      "shortDescription": "",
+      "longDescription": "",
+      "sectionDescription": "In this section, you can explore people, including artists, calligraphers, performers, composers, and other individuals related to the artworks and events in the archive. Other than table view, you can also explore the work locations and birth locations of the people in map view, and their occupations, calligraphic training, and fields of study in pie charts.",
+      "instancePage": {
+        "label": "Person",
+        "description": ""
+      },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "Uniform Resource Identifier"
+         },
+        "prefLabel": {
+          "label": "name",
+          "description": "The name of the person."
+        },
+        "otherName": {
+          "label": "name",
+          "description": "Name of the person."
+        },
+        "tag": {
+          "label": "tag",
+          "description": "Tag(s) associated with the person."
+        },
+        "pseudonym": {
+          "label": "pseudonym",
+          "description": "Pseudonym(s) associated with the person."
+        },
+        "role": {
+          "label": "occupation",
+          "description": "Occupation of the person."
+        },
+        "description": {
+          "label": "description",
+          "description": "Dscription of the person."
+        },
+        "gender": {
+          "label": "gender",
+          "description": "Gender of the person.",
+          "missingValueLabel": "not specified"
+        },
+        "birthDate": {
+          "label": "date of birth",
+          "description": "Date of birth of the person."
+        },
+        "birthPlace": {
+          "label": "place of birth",
+          "description": "Place of birth of the person."
+        },
+        "countryOfCitizenship": {
+          "label": "country of citizenship",
+          "description": "Country of citizenship of the person."
+        },
+        "deathDate": {
+          "label": "date of death",
+          "description": "Date of death of the person."
+        },
+        "deathPlace": {
+          "label": "place of death",
+          "description": "Place of death of the person."
+        },
+        "placeOfActivity": {
+          "label": "work location",
+          "description": "Main location of activity of the person."
+        },
+        "nativeLanguage": {
+          "label": "native language",
+          "description": "Native language(s) of the person."
+        },
+        "usesLanguage": {
+          "label": "uses other language",
+          "description": "Other language(s) used by the person."
+        },
+        "fieldOfStudy": {
+          "label": "field of study",
+          "description": "Academic field the person studied in."
+        },
+        "calligraphicTraining": {
+          "label": "calligraphic training",
+          "description": "Type of calligraphic training the person has."
+        },
+        "isMemberOf": {
+          "label": "is member of",
+          "description": "Artistic collective or organisation the person is a member of."
+        },
+        "isCreatorOf": {
+          "label": "is creator of",
+          "description": "Artwork or artwork series created by the person."
+        },
+        "isCalligrapherOf": {
+          "label": "is calligrapher of",
+          "description": "Artwork whose calligraphy was done by the person."
+        },
+        "isPerformerOf": {
+          "label": "performed in",
+          "description": "Performing arts event in which the person performed."
+        },
+        "isDesignerOf": {
+          "label": "is designer of",
+          "description": "Artwork designed by the person."
+        },
+        "isCuratorOf": {
+          "label": "is curator of",
+          "description": "Exhibition the person curated."
+        },
+        "isComposerOf": {
+          "label": "composed music for",
+          "description": "Artwork(s) for which the person composed the music."
+        },
+        "officialWebsite": {
+          "label": "official website",
+          "description": "Official website of the person."
+        }
+      }
+    },
+    "performingArts": {
+      "label": "Performing Arts",
+      "facetResultsType": "artworks",
+      "shortDescription": " ",
+      "longDescription": "",
+      "sectionDescription": "In this section, you can explore the intersection of calligraphy, music, and dance through performing artworks included in this archive. Other than table view, you can browse the artworks by images, by event locations in map view, and view trends in frequency of performing arts events.",
+      "instancePage": {
+        "label": "Performing Arts",
+        "description": ""
+     },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "Uniform Resource Identifier"
+        },
+        "video": {
+          "label": "video",
+          "description": "Video related to the artwork."
+        },
+        "prefLabel": {
+          "label": "title",
+          "description": "Title of the artwork in English."
+        },
+        "titleOtherLang": {
+          "label": "title in other languages",
+          "description": "Title of the artwork in languages other than English."
+        },
+        "description": {
+          "label": "description",
+          "description": "Description of the artwork."
+        },
+        "performer": {
+          "label": "performer",
+          "description": "Performer who participated in the event."
+        },
+        "calligrapher": {
+          "label": "calligrapher",
+          "description": "Calligrapher who participated in the event."
+        },
+        "composer": {
+          "label": "composer",
+          "description": "Composer of the music for the event."
+        },
+        "performingArtType": {
+          "label": "type",
+          "description": "Type of the artwork."
+        },
+        "date": {
+          "label": "date",
+          "description": "Date when the event took place."
+        },
+        "location": {
+          "label": "location",
+          "description": "Location where the event took place."
+        },
+        "duration": {
+          "label": "duration",
+          "description": "Duration of the event."
+        },
+        "createsArtwork": {
+          "label": "created artwork",
+          "description": "Visual artwork created during the event."
+        },
+        "usesArtwork": {
+          "label": "used artwork",
+          "description": "Additional artwork used during the event."
+        },
+        "material": {
+          "label": "material/support",
+          "description": "Material used in the creation of the artwork, applied to a support."
+        },
+        "tool": {
+          "label": "tool",
+          "description": "Tool used in the creation of the artwork."
+        },
+        "musicalInstrument": {
+          "label": "musical instrument",
+          "description": "Musical instrument used during the event."
+        },
+        "musicStyle": {
+          "label": "music style",
+          "description": "Style of music used during the event."
+        },
+        "songTitle": {
+          "label": "accompanying musical piece",
+          "description": "Musical piece that accompanied the performance."
+        },
+        "depicts": {
+          "label": "depicts",
+          "description": "Subject, theme, or entity visually and/or conceptually expressed in the artwork."
+        },
+        "inspiredBy": {
+          "label": "inspired by",
+          "description": "Object or entity that inspired the artwork."
+        },
+        "chineseConcept": {
+          "label": "has Chinese concept",
+          "description": "Philosophical, literary, cultural, social or other concept or notion represented within the artwork."
+        },
+        "chineseVisualElement": {
+          "label": "has Chinese visual element",
+          "description": "Visual element or motif derived from Chinese culture that appears in the artwork."
+        },
+        "partOfSeries": {
+          "label": "part of series",
+          "description": "Series the artwork belongs to."
+        },
+        "hasUnit": {
+          "label": "has unit",
+          "description": "'Calli-Writing' unit contained in the artwork."
+        },
+        "organiser": {
+          "label": "organiser",
+          "description": "Person or organisation who organised the event."
+        },
+        "exhibitionHistory": {
+          "label": "exhibited at",
+          "description": "Exhibition(s) where the artwork was exhibited."
+        },
+        "officialWebsite": {
+          "label": "official website",
+          "description": "Official website of the artwork."
+        }
+        
+      }
+    },
+    "visualArts": {
+      "label": "Visual Arts",
+      "facetResultsType": "artworks",
+      "shortDescription": "",
+      "longDescription": "",
+      "sectionDescription": "In this section, you can explore the interconnection of calligraphy with visual arts, including some contemporary forms such as mixed-media, installations, photography, digital art, video-art, land-art, etc. Other than table view, you can browse the artworks by images, explore locations of creation of the artworks in map view, and materials and tools in pie/chart view.",
+      "instancePage": {
+        "label": "Visual Arts",
+        "description": ""
+      },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "Uniform Resource Identifier"
+        },
+        "video": {
+          "label": "video",
+          "description": "Video related to the artwork."
+        },
+        "prefLabel": {
+          "label": "title",
+          "description": "Title of the artwork in English."
+        },
+        "titleOtherLang": {
+          "label": "title in other languages",
+          "description": "Title of the artwork in languages other than English."
+        },
+        "description": {
+          "label": "description",
+          "description": "Description of the artwork."
+        },
+        "creator": {
+          "label": "creator",
+          "description": "Person who created the artwork."
+        },
+        "visualArtType": {
+          "label": "type",
+          "description": "Type of the artwork."
+        },
+        "date": {
+          "label": "date",
+          "description": "Date when the artwork was created."
+        },
+        "location": {
+          "label": "location",
+          "description": "Location where the artwork was created."
+        },
+        "material": {
+          "label": "material/support",
+          "description": "Material used in the creation of the artwork, applied to a support.",
+          "missingValueLabel": "digital artwork"
+        },
+        "tool": {
+          "label": "tool",
+          "description": "Tool used in the creation of the artwork.",
+          "missingValueLabel": "digital artwork"
+        },
+        "width": {
+          "label": "width",
+          "description": "Width of the artwork."
+        },
+        "height": {
+          "label": "height",
+          "description": "Height of the artwork."
+        },
+        "colour": {
+          "label": "colour",
+          "description": "Colour(s) of the artwork."
+        },
+        "hasSeal": {
+          "label": "seal",
+          "description": "Indicates the presence or absence of a seal in the artwork."
+        },
+        "hasColophon": {
+          "label": "colophon",
+          "description": "Indicates the presence or absence of a colophon in the artwork."
+        },
+        "usesArtwork": {
+          "label": "used artwork",
+          "description": "Artwork used in the creation of this artwork."
+        },
+        "derivesFrom": {
+          "label": "derives from",
+          "description": "Performing arts event during which the artwork was created."
+        },
+        "vectorisedOrDigitised": {
+          "label": "vectorised/digitised",
+          "description": "Indicates whether the artwork is vectorised or digitised."
+        },
+        "depicts": {
+          "label": "depicts",
+          "description": "Subject, theme, or entity visually and/or conceptually expressed in the artwork."
+        },
+        "inspiredBy": {
+          "label": "inspired by",
+          "description": "Object or entity that inspired the artwork."
+        },
+        "partOfSeries": {
+          "label": "part of series",
+          "description": "Series the artwork belongs to."
+        },
+        "exhibitionHistory": {
+          "label": "exhibited at",
+          "description": "Exhibition(s) where the artwork was exhibited."
+        },
+        "owner": {
+          "label": "owner",
+          "description": "Owner that holds the rights of the artwork."
+        },
+        "commissioner": {
+          "label": "commissioner",
+          "description": "Person or organisation who commissioned the artwork."
+        },
+        "hasUnit": {
+          "label": "has unit",
+          "description": "'Calli-Writing' unit contained in the artwork."
+        },
+        "officialWebsite": {
+          "label": "official website",
+          "description": "Official website of the artwork."
+        }
+      }
+    },
+    "graffitiArt": {
+      "label": "Graffiti Art",
+      "facetResultsType": "artworks",
+      "shortDescription": " ",
+      "longDescription": "",
+      "sectionDescription": "In this section, you can explore the intersection of calligraphy and graffiti art through the artworks included in this archive. Other than table view, you can browse the artworks by images, by the locations of creation in map view, and explore materials and tools in pie/chart view.",
+      "instancePage": {
+        "label": "Graffiti Art",
+        "description": ""
+        },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "Uniform Resource Identifier"
+        },
+        "prefLabel": {
+          "label": "title",
+          "description": "Title of the artwork in English."
+        },
+        "titleOtherLang": {
+          "label": "title in other languages",
+          "description": "Title of the artwork in languages other than English."
+        },
+        "creator": {
+          "label": "creator",
+          "description": "Person or artistic collective who created the artwork."
+        },
+        "graffitiArtType": {
+          "label": "type",
+          "description": "Type of the artwork."
+        },
+        "graffitiArtStyle": {
+          "label": "graffiti style",
+          "description": "Style of the artwork."
+        },
+        "graffitiArtGenre": {
+          "label": "graffiti genre",
+          "description": "Genre of the artwork."
+        },
+        "description": {
+          "label": "description",
+          "description": "Description of the artwork."
+        },
+        "date": {
+          "label": "date",
+          "description": "Date when the artwork was created."
+        },
+        "location": {
+          "label": "location",
+          "description": "Location where the artwork was created."
+        },
+        "streetAddress": {
+          "label": "street address",
+          "description": "Street address where the artwork was created."
+        },
+        "material": {
+          "label": "material/support",
+          "description": "Material used in the creation of the artwork, applied to a support."
+        },
+        "tool": {
+          "label": "tool",
+          "description": "Tool used in the creation of the artwork."
+        },
+        "width": {
+          "label": "width",
+          "description": "Width of the artwork."
+        },
+        "height": {
+          "label": "height",
+          "description": "Height of the artwork."
+        },
+        "colour": {
+          "label": "colour",
+          "description": "Colour(s) of the artwork."
+        },
+        "hasSeal": {
+          "label": "seal",
+          "description": "Indicates the presence or absence of a seal in the artwork."
+        },
+        "hasColophon": {
+          "label": "colophon",
+          "description": "Indicates the presence or absence of a colophon in the artwork."
+        },
+        "hasChineseConcept": {
+          "label": "has Chinese concept",
+          "description": "Philosophical, literary, cultural, social or other concept or notion represented within the artwork."
+        },
+        "hasChineseVisualElement": {
+          "label": "has Chinese visual element",
+          "description": "Visual element or motif derived from Chinese culture that appears in the artwork."
+        },
+        "hasOtherVisualElement": {
+          "label": "has other visual element",
+          "description": "Non-Chinese visual element (motif) that appears in the artwork."
+        },
+        "depicts": {
+          "label": "depicts",
+          "description": "Subject, theme, or entity visually and / or conceptually expressed in the artwork."
+        },
+        "inspiredBy": {
+          "label": "inspired by",
+          "description": "Object or entity that inspired the artwork."
+        },
+        "partOfSeries": {
+          "label": "part of series",
+          "description": "Series the artwork belongs to."
+        },
+        "commissioner": {
+          "label": "commissioner",
+          "description": "Person or organisation who commissioned the artwork."
+        },
+        "hasUnit": {
+          "label": "has unit",
+          "description": "'Calli-Writing' unit contained in the artwork."
+        }
+      }
+    },
+    "decorativeAppliedArts": {
+      "label": "Decorative and Applied Arts",
+      "facetResultsType": "artworks",
+      "shortDescription": "",
+      "longDescription": "",
+      "sectionDescription": "In this section, you can explore how calligraphy merged with decorative arts, fashion design, graphic design, etc. Other than table view, you can browse the artworks by images, by locations of creation of the artworks in map view, and materials and tools in pie/chart view.",
+      "instancePage": {
+        "label": "Decorative and Applied Arts",
+        "description": ""
+      },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "Uniform Resource Identifier"
+        },
+        "prefLabel": {
+          "label": "title",
+          "description": "Title of the artwork in English."
+        },
+        "titleOtherLang": {
+          "label": "title in other languages",
+          "description": "Title of the artwork in languages other than English."
+        },
+        "description": {
+          "label": "description",
+          "description": "Description of the artwork."
+        },
+        "manufacturer": {
+          "label": "manufacturer",
+          "description": "Person or organisation who manufactured the artwork."
+        },
+        "designer": {
+          "label": "designer",
+          "description": "Person or organisation who designed the artwork."
+        },
+        "calligrapher": {
+          "label": "calligrapher",
+          "description": "Person who created the calligraphy in the artwork."
+        },
+        "architect": {
+          "label": "architect",
+          "description": "Person or organisation who designed the artwork."
+        },
+        "productType": {
+          "label": "type",
+          "description": "Type of the artwork."
+        },
+        "date": {
+          "label": "date",
+          "description": "Date when the artwork was created."
+        },
+        "location": {
+          "label": "location",
+          "description": "Location where the artwork was created."
+        },
+        "material": {
+          "label": "material/support",
+          "description": "Material used in the creation of the artwork, applied to a support.",
+          "missingValueLabel": "digital artwork"
+        },
+        "tool": {
+          "label": "tool",
+          "description": "Tool used in the creation of the decorative and applied artwork.",
+          "missingValueLabel": "digital artwork"
+        },
+        "width": {
+          "label": "width",
+          "description": "Width of the artwork."
+        },
+        "height": {
+          "label": "height",
+          "description": "Height of the artwork."
+        },
+        "colour": {
+          "label": "colour",
+          "description": "Colour(s) of the artwork."
+        },
+        "hasSeal": {
+          "label": "seal",
+          "description": "Indicates the presence or absence of a seal in the artwork."
+        },
+        "hasColophon": {
+          "label": "colophon",
+          "description": "Indicates the presence or absence of a colophon in the artwork."
+        },
+        "vectorisedOrDigitised": {
+          "label": "vectorised/digitised",
+          "description": "Indicates whether the artwork is vectorised or digitised."
+        },
+        "hasChineseConcept": {
+          "label": "has Chinese concept",
+          "description": "Philosophical, literary, cultural, social or other concept or notion represented within the artwork."
+        },
+        "hasChineseVisualElement": {
+          "label": "has Chinese visual element",
+          "description": "Visual element or motif derived from Chinese culture that appears in the artwork."
+        },
+        "hasOtherVisualElement": {
+          "label": "has other visual element",
+          "description": "Non-Chinese visual element (motif) that appears in the artwork."
+        },
+        "depicts": {
+          "label": "depicts",
+          "description": "Subject, theme, or entity visually and / or conceptually expressed in the artwork."
+        },
+        "inspiredBy": {
+          "label": "inspired by",
+          "description": "Object or entity that inspired the artwork."
+        },
+        "derivesFrom": {
+          "label": "derives from",
+          "description": "Performing arts event during which the artwork was created."
+        },
+        "partOfSeries": {
+          "label": "part of series",
+          "description": "Series the artwork belongs to."
+        },
+        "hasUnit": {
+          "label": "has unit",
+          "description": "'Calli-Writing' unit contained in the artwork."
+        },
+        "exhibitionHistory": {
+          "label": "exhibited at",
+          "description": "Exhibition(s) where the artwork was exhibited."
+        },
+        "commissioner": {
+          "label": "commissioner",
+          "description": "Person or organisation who commissioned the artwork."
+        },
+        "price": {
+          "label": "price",
+          "description": "Price of the artwork."
+        },
+        "officialWebsite": {
+          "label": "official website",
+          "description": "Official website of the artwork."
+        }
+      }
+    },
+    "exhibition": {
+      "label": "Exhibitions",
+      "facetResultsType": "exhibitions",
+      "shortDescription": "",
+      "longDescription": "",
+      "sectionDescription": "In this section, you can explore exhibitions where the artworks from the archive were exhibited. Other than table view, you can browse the exhibitions by location in map view, and by start date in timeline view.",
+      "instancePage": {
+        "label": "Exhibition",
+        "description": ""
+        },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "Uniform Resource Identifier"
+        },
+        "prefLabel": {
+          "label": "title",
+          "description": "Title of the exhibition in English."
+        },
+        "titleOtherLang": {
+          "label": "title in other languages",
+          "description": "Title of the exhibition in languages other than English."
+        },
+        "description": {
+          "label": "description",
+          "description": "Description of the exhibition."
+        },
+        "curator": {
+          "label": "curator",
+          "description": "Person who curated the exhibition."
+        },
+        "organiser": {
+          "label": "organiser",
+          "description": "Person or organisation who organised the exhibition."
+        },
+        "location": {
+          "label": "location",
+          "description": "Location where the exhibition took place."
+        },
+        "startTime": {
+          "label": "began on",
+          "description": "Date when the exhibition started."
+        },
+        "endTime": {
+          "label": "ended on",
+          "description": "Date when the exhibition ended."
+        },
+        "exhibitedArtist": {
+          "label": "exhibited artist",
+          "description": "Artist(s) whose artworks were displayed in the exhibition."
+        },
+        "exhibitedArtwork": {
+          "label": "exhibited artwork",
+          "description": "Artwork(s) displayed in the exhibition."
+        },
+        "officialWebsite": {
+          "label": "official website",
+          "description": "Official website of the exhibition."
+        }
+      }
+    },
+    "calliWritingUnit": {
+      "label": "Calli-Writing Units",
+      "facetResultsType": "units",
+      "shortDescription": "",
+      "longDescription": "Here some description.",
+      "sectionDescription": "In this section you can explore 'Calli-Writing' units. In an artwork, this unit features elements of calligraphy and/or writing, whether in the form of meaningful writing, a set of signs, and/or a set of lines.",
+      "instancePage": {
+        "label": "Calli-Writing Unit",
+        "description": ""      },
+        "properties": {
+        "image": {
+          "label": "Image",
+          "description": "Image."
+        },
+        "uri": {
+          "label": "URI",
+          "description": "Uniform Resource Identifier"
+        },
+        "prefLabel": {
+          "label": "attributed title",
+          "description": "Title attributed to the Calli-Writing Unit."
+        },
+        "description": {
+          "label": "description",
+          "description": "Description of the Calli-Writing Unit."
+        },
+        "hasSignificance": {
+          "label": "significance",
+          "description": "Indicates whether the content of the Calli-Writing unit is meaningful, meaningless, or illegible."
+        },
+        "writingSystem": {
+          "label": "writing system",
+          "description": "Characters, alphabet or other system of writing used in a Calli-Writing unit."
+        },
+        "hasCharacterForm": {
+          "label": "character form",
+          "description": "Form of the Chinese character present in the Calli-Writing unit."
+        },
+        "scriptStyle": {
+          "label": "script style",
+          "description": "Indicates a specific form / style of the Chinese script used in the Calli-Writing unit."
+        },
+        "hasCalligraphicLine": {
+          "label": "calligraphic line",
+          "description": "Indicates the presence or absence of a calligraphic line within the Calli-Writing unit."
+        },
+        "directionality": {
+          "label": "directionality",
+          "description": "Direction of the writing within the Calli-Writing unit."
+        },
+        "language": {
+          "label": "language",
+          "description": "Language(s) associated with the Calli-Writing unit."
+        },
+        "transcriptionAndTranslation": {
+          "label": "transcription and translation",
+          "description": "Transcription and translation of the content of the Calli-Writing unit."
+        },
+        "numberOfCharacters": {
+          "label": "number of characters",
+          "description": "Number of Chinese characters in the Calli-Writing unit."
+        },
+        "basedOn": {
+          "label": "based on",
+          "description": "Literary work that the Calli-Writing unit is based on."
+        },
+        "hasColophon": {
+          "label": "colophon",
+          "description": "Indicates the presence or absence of a colophon in the Calli-Writing unit."
+        },
+        "depicts": {
+          "label": "depicts",
+          "description": "Subject, theme, or entity visually and / or conceptually expressed in the Calli-Writing unit."
+        },
+        "material": {
+          "label": "material/support",
+          "description": "Material used in the creation of the Calli-Writing unit, applied to a support.",
+          "missingValueLabel": "digital artwork"
+        },
+        "tool": {
+          "label": "tool",
+          "description": "Tool used in the creation of the Calli-Writing unit.",
+          "missingValueLabel": "digital artwork"
+        },
+        "colour": {
+          "label": "colour",
+          "description": "Colour(s) of the Calli-Writing unit."
+        },
+        "hasBackgroundColour": {
+          "label": "background colour",
+          "description": "Background colour(s) of the Calli-Writing Unit."
+        },
+        "vectorisedOrDigitised": {
+          "label": "vectorised or digitised",
+          "description": "Indicates whether the Calli-Writing unit is vectorised or digitised."
+        },
+        "graffitiArtStyle": {
+          "label": "graffiti style",
+          "description": "Graffiti style of the Calli-Writing Unit."
+        },
+        "isTagOf": {
+          "label": "is tag of",
+          "description": "Indicates the artist and / or the artistic collective whose tag is represented in the Calli-Writing unit."
+        },
+        "isUnitOf": {
+          "label": "is unit of",
+          "description": "Artwork to which the Calli-Writing Unit belongs."
+        },
+        "relatedUnit": {
+          "label": "related unit",
+          "description": "Calli-Writing Unit related to the current unit, belonging to the same artwork."
+        }
+      }
+    },
+    "artworkSeries": {
+      "label": "Series of creative works",
+      "facetResultsType": "series",
+      "shortDescription": "",
+      "longDescription": "",
+      "sectionDescription": "In this section, you can explore series of creative works, that group together artworks from the same series. Other than table view, you can browse the series by date in which the creation of the series started in timeline view.",
+      "instancePage": {
+        "label": "Series of creative works",
+        "description": ""
+        },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "Uniform Resource Identifier"
+        },
+        "image": {
+          "label": "image",
+          "description": " "
+        },
+        "prefLabel": {
+          "label": "title",
+          "description": "Title of the series in English."
+        },
+        "titleOtherLang": {
+          "label": "title in other languages",
+          "description": "Title of the series in languages other than English."
+        },
+        "description": {
+          "label": "description",
+          "description": "Description of the series." },
+
+        "location": {
+          "label": "location",
+          "description": "Location where the series was created."
+        },
+        "creator": {
+          "label": "creator",
+          "description": "Person who created the series."
+        },
+        "startTime": {
+          "label": "start year",
+          "description": "Date when the creation of the series began."
+        },
+        "endTime": {
+          "label": "end year",
+          "description": "Date when the creation of the series ended."
+        },
+        "includesArtwork": {
+          "label": "includes artwork",
+          "description": "Artworks included in the series."
+        }
+      }
+    },
+    "literaryWork": {
+      "label": "Literary works",
+      "facetResultsType": "works",
+      "shortDescription": "",
+      "longDescription": "",
+      "instancePage": {
+        "label": "Literary work",
+        "description": ""
+        },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "Uniform Resource Identifier"
+        },
+        "prefLabel": {
+          "label": "title",
+          "description": "Title of the work in English."
+        },
+        "titleOtherLang": {
+          "label": "title in other languages",
+          "description": "Title of the work in other languages."
+        },
+        "description": {
+          "label": "description",
+          "description": "Description of the work."
+        },
+        "author": {
+          "label": "author",
+          "description": "Author of the work."
+        },
+        "date": {
+          "label": "date",
+          "description": "Date when the work was created."
+        },
+        "transcriptionAndTranslation": {
+          "label": "transcription and translation",
+          "description": "Transcription and translation of the content of the literary work."
+        }
+      }
+    },
+    "traditionalArtwork": {
+      "label": "Traditional Artworks",
+      "facetResultsType": "artworks",
+      "shortDescription": "",
+      "longDescription": "",
+      "instancePage": {
+        "label": "Traditional Artworks",
+        "description": ""
+      },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "Uniform Resource Identifier"
+        },
+        "prefLabel": {
+          "label": "title",
+          "description": "Title of the artwork in English."
+        },
+        "titleOtherLang": {
+          "label": "title in other languages",
+          "description": "Title of the artwork in languages other than English."
+        },
+        "description": {
+          "label": "description",
+          "description": "Description of the artwork."
+        },
+        "creator": {
+          "label": "creator",
+          "description": "Person who created the artwork."
+        },
+        "traditionalArtType": {
+          "label": "type",
+          "description": "Type of the artwork."
+        },
+        "date": {
+          "label": "date",
+          "description": "Date when the artwork was created."
+        }
+      }
+    },
+    "artisticCollective": {
+      "label": "Artistic Collectives",
+      "facetResultsType": "collectives",
+      "shortDescription": "",
+      "longDescription": "",
+      "instancePage": {
+        "label": "Artistic Collectives",
+        "description": ""
+      },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "Uniform Resource Identifier"
+        },
+        "prefLabel": {
+          "label": "name",
+          "description": "Name of the artistic collective."
+        },
+        "description": {
+          "label": "description",
+          "description": "Description of the artistic collective."
+        },
+        "type": {
+          "label": "type",
+          "description": "Type of the artistic collective."
+        },
+        "location": {
+          "label": "location",
+          "description": "Location where the artistic collective is based."
+        },
+        "date": {
+          "label": "date",
+          "description": "Date when the artistic collective was founded."
+        },
+        "hasMember": {
+          "label": "members",
+          "description": "Members of the artistic collective."
+        },
+        "isCreatorOf": {
+          "label": "is creator of",
+          "description": "Artwork or artwork series created by the artistic collective."
+        },
+        "isCalligrapherOf": {
+          "label": "is calligrapher of",
+          "description": "Artworks for which the collective made the calligraphy."
+        },
+        "isPerformerOf": {
+          "label": "performed in",
+          "description": "Performing arts event in which the artistic collective performed."
+        },
+        "isDesignerOf": {
+          "label": "is designer of",
+          "description": "Artwork designed by the artistic collective."
+        },
+        "officialWebsite": {
+          "label": "official website",
+          "description": "Official website of the exhibition."
+        }
+      }
+    },
+    "organisation": {
+      "label": "Organisations",
+      "facetResultsType": "organisations",
+      "shortDescription": "",
+      "longDescription": "",
+      "instancePage": {
+        "label": "Organisations",
+        "description": ""
+      },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "Uniform Resource Identifier"
+        },
+        "prefLabel": {
+          "label": "name",
+          "description": "Name of the organisation."
+        },
+        "description": {
+          "label": "description",
+          "description": "Description of the organisation."
+        },
+        "type": {
+          "label": "type",
+          "description": "Type of the organisation."
+        },
+        "location": {
+          "label": "location",
+          "description": "Location where the organisation is based."
+        },
+        "date": {
+          "label": "date",
+          "description": "Date when the organisation was founded."
+        },
+        "hasMember": {
+          "label": "members",
+          "description": "Members of the organisation."
+        },
+        "officialWebsite": {
+          "label": "official website",
+          "description": "Official website of the organisation."
+        }
+      }
+    },
+    "perspective4": {
+      "label": "ClientFS",
+      "shortDescription": "Client-side faceted search",
+      "datasets": {
+        "kotus": {
+          "label": "Names Archive of the Institute for the Languages of Finland (NA)",
+          "aboutLink": "https://nimiarkisto.fi/wiki/Nimiarkisto:Tietoja"
+        },
+        "pnr": {
+          "label": "Finnish Geographic Names Registry (PNR)",
+          "aboutLink": "https://www.maanmittauslaitos.fi/kartat-ja-paikkatieto/asiantuntevalle-kayttajalle/tuotekuvaukset/nimisto"
+        },
+        "warsa_karelian_places": {
+          "label": "Karelian map names (KK)",
+          "aboutLink": "https://www.suomi.fi/palvelut/verkkoasiointi/vanhat-karjalan-kartat-maanmittauslaitos/f51d72a2-510c-4c34-bb3e-b752f5d38250"
+        },
+        "tgn": {
+          "label": "The Getty Thesaurus of Geographic Names (TGN)",
+          "aboutLink": "http://www.getty.edu/research/tools/vocabularies/tgn/about.html"
+        }
+      },
+      "inputPlaceHolder": "Search place names",
+      "searchByArea": "Search by area",
+      "searchByAreaTitle": "Siirrä karttanäkymä tutkittavalle alueelle, aseta zoomaustasoksi vähintään 11 ja käytä alareunan hakupainiketta.",
+      "searchByAreaCancel": "Cancel",
+      "searchByAreaSearch": "Search",
+      "properties": {
+        "datasetSelector": {
+          "label": "Choose dataset(s)",
+          "description": "Description"
+        },
+        "prefLabel": {
+          "label": "Name",
+          "description": "Description"
+        },
+        "broaderTypeLabel": {
+          "label": "Type",
+          "description": "Description"
+        },
+        "broaderAreaLabel": {
+          "label": "Area",
+          "description": "Description"
+        },
+        "modifier": {
+          "label": "Modifier",
+          "description": "Description"
+        },
+        "basicElement": {
+          "label": "Base",
+          "description": "Description"
+        },
+        "collectionYear": {
+          "label": "Year",
+          "description": "Description"
+        },
+        "source": {
+          "label": "Source",
+          "description": "Description"
+        }
+      }
+    }
+  },
+  "aboutThePortalPartOne": "<h2 class=\"MuiTypography-root MuiTypography-h2 MuiTypography-gutterBottom\"> About the project </h2> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> The ERC Starting Grant project <i>WRITE – New Forms of Calligraphy in China: A Contemporary Culture Mirror</i> (GA n. 949645) is a major research initiative that explores how evolving forms of calligraphy in contemporary China are reshaping cultural identity. With its growing presence in contemporary art, WRITE systematically analyses these transformations as both artistic expressions and cultural phenomena. </p> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> Building on the extensive research conducted within WRITE, the WenDAng project aims to create the first open-access semantic digital archive dedicated to these emerging forms of Chinese calligraphy. WenDAng can be understood as the digital extension of WRITE: it uses the heterogeneous data collected through the research project to offer a centralised platform for conservation, exploration, analysis, and public engagement. </p> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> Grounded in Digital Humanities, WenDAng leverages computational tools to preserve, analyse, represent, and visualise the findings gathered through WRITE, while maintaining a critical awareness of the cultural significance of the objects studied. This methodology not only provides new perspectives on contemporary calligraphy, but also redefines how knowledge about it is generated and disseminated. </p> <h2 class=\"MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom\"> What you can find in WenDAng </h2> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> Through WenDAng, users can explore artworks from the four <b>WRITE collections</b> - Visual Arts, Performing Arts, Graffiti Art, and Decorative and Applied Arts. The archive also includes artists, calligraphers, exhibitions, and other entities relevant to the project. </p> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> Another important section of the archive is dedicated to so-called <b>“Calli-Writing” units</b>. Within an artwork, a Calli-Writing unit is a content unit that features elements of calligraphy and/or writing, whether in the form of meaningful writing, a set of signs, and/or a set of lines. </p> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> The archive is designed not only as a catalogue, but also as a research tool that enables the analysis of complex relationships among these entities. </p>",
+  "aboutThePortalPartTwo": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> At the core of WenDAng is the WRITE ontology, which enables the representation of both tangible and intangible aspects of this important cultural, artistic, linguistic, and social phenomenon. Together with a dedicated thesaurus, the ontology helps bridge existing gaps in the representation of traditional and contemporary expressions of calligraphy and art. </p> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> The WRITE ontology can be consulted <a href=\"https://w3id.org/write/ontology\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>. </p> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> The WRITE thesaurus can be consulted <a href=\"https://w3id.org/write/thesaurus\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>. </p> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> To consult the detailed documentation of the WenDAng project, visit <a href=\"https://wendang-project.github.io/documentation/\" target=\"_blank\" rel=\"noopener noreferrer\">the project documentation</a>. </p> <h2 class=\"MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom\"> Team </h2> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> <strong>Adriana Iezzi</strong><br /> Principal Investigator – WRITE &amp; WenDAng projects </p> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> <strong>Katarina Lučić</strong><br /> PhD Candidate – WenDAng project </p> <h4 class=\"MuiTypography-root MuiTypography-h6 MuiTypography-gutterBottom\"> Together with the WRITE team </h4> <ul class=\"MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom\"> <li>Martina Merenda – Research fellow</li> <li>Daniele Caccin – Research fellow</li> <li>Marta R. Bisceglia – Research fellow</li> <li>Jiang Siqi – PhD candidate</li> </ul>", 
+  "feedback": "<h1 class=\"MuiTypography-root MuiTypography-h2 MuiTypography-gutterBottom\"> Feedback </h1> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> This semantic portal has been developed by ... </p> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> We are interested in your feedback on the functionality, coverage, and usefulness of the portal and its data. </p> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> Please complete our <a href=\"\" target='_blank' rel='noopener noreferrer'>Feedback Survey Form (add link).</a> </p> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> You can also contact us via email: ... or DM us on Twitter: ... </p> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> Please be aware that this portal’s response times may be affected by the size and complexity of the underlying knowledge graph. </p>",
+  "exportLink": {
+    "viewLabel": "Tab",
+    "viewInstructions": "Choose the tab in which the query will open",
+    "fieldLabel": "Generated link (read-only)",
+    "infoBody": "You can share the query you made by using the link below. The link is generated based on what you have selected for different facets and will open the search view of this perspective with those choices on the selected tab. You can change the opened tab to any of the supported ones using the dropdown menu below. If you make additional choices while on this page, the link will be automatically updated to include those.",
+    "warningTitle": "Generated link might be too long for some browsers",
+    "warningBody": "The current length of the generated link is more than 2,000 characters. Browsers have different limits for the maximum lengths of links they can handle. <strong>This link might not work on all browsers</strong> — you can reduce the length of the link by deselecting some facet options.",
+    "errorTitle": "Generated link is too long",
+    "errorBody": "The current length of the generated link is more than 15,800 characters. <strong>The server will refuse to handle requests that go over certain length limits</strong> — you can reduce the length of the link by deselecting some facet options.",
+    "copyLinkToClipboard": "Copy link to clipboard"
+  }
+}

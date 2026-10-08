@@ -1,0 +1,71 @@
+import React from 'react'
+import {
+  CalendarViewDay,
+  CalendarToday,
+  TripOrigin,
+  LocationOn,
+  AddLocation,
+  Star,
+  Redo,
+  PieChart,
+  CloudDownload,
+  BubbleChart,
+  ShowChart,
+  FormatAlignJustify,
+  ClearAll,
+  OndemandVideo,
+  KeyboardVoice,
+  Autorenew,
+  Add,
+  PlayArrow,
+  MailOutline,
+  TrendingDown,
+  Tune,
+  ArrowForward,
+  Subject,
+  ImageSearch,
+  ScatterPlot,
+  Toc,
+  ViewList
+} from '@mui/icons-material'
+import has from 'lodash'
+
+const MuiIcon = props => {
+  const MuiIcons = {
+    CalendarViewDay: CalendarViewDay,
+    CalendarToday: CalendarToday,
+    TripOrigin: TripOrigin,
+    LocationOn: LocationOn,
+    AddLocation: AddLocation,
+    Star: Star,
+    Redo: Redo,
+    PieChart: PieChart,
+    CloudDownload: CloudDownload,
+    BubbleChart: BubbleChart,
+    ShowChart: ShowChart,
+    FormatAlignJustify: FormatAlignJustify,
+    ClearAll: ClearAll,
+    OndemandVideo: OndemandVideo,
+    KeyboardVoice: KeyboardVoice,
+    Autorenew: Autorenew,
+    Add: Add,
+    PlayArrow: PlayArrow,
+    MailOutline: MailOutline,
+    TrendingDown: TrendingDown,
+    Tune: Tune,
+    ArrowForward: ArrowForward,
+    Subject: Subject,
+    ImageSearch: ImageSearch,
+    ScatterPlot: ScatterPlot,
+    Toc: Toc,
+    ViewList: ViewList
+  }
+  if (has(MuiIcons, props.iconName)) {
+    const MuiIconComponent = MuiIcons[props.iconName]
+    return <MuiIconComponent />
+  } else {
+    return <div />
+  }
+}
+
+export default MuiIcon

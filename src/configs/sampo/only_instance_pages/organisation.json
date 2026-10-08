@@ -1,0 +1,107 @@
+{
+  "id": "organisation",
+  "endpoint": {
+    "url": "https://fuseki.dipintra.it/wendangSampo/sparql",
+    "useAuth": false,
+    "prefixesFile": "SparqlQueriesPrefixes.js"
+  },
+  "sparqlQueriesFile": "SparqlQueriesOrganisation.js",
+  "baseURI": "http://wendang-project.github.io/data/item",
+  "URITemplate": "<BASE_URI>/<LOCAL_ID>",
+  "resultClasses": {
+    "organisation": {
+      "instanceConfig": {
+        "propertiesQueryBlock": "organisationProperties",
+        "instancePageResultClasses": {
+          "instancePageTable": {
+            "tabID": 0,
+            "component": "InstancePageTable",
+            "tabPath": "table",
+            "tabIcon": "CalendarViewDay"
+          }
+        }
+      }
+    }
+  },
+  "properties": [
+    {
+      "id": "uri",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": true,
+      "sortValues": true,
+      "numberedList": false,
+      "onlyOnInstancePage": true
+    },
+    {
+      "id": "prefLabel",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
+      "id": "description",
+      "valueType": "object",
+      "minWidth": 250,
+      "onlyOnInstancePage": true,
+      "group": "identification"
+    },
+    {
+      "id": "type",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250,
+      "group": "about"
+    },
+    {
+      "id": "location",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "sortValues": true,
+      "instanceInlineList": true,
+      "inlineSeparator": ", ",
+      "minWidth": 250,
+      "onlyOnInstancePage": true,
+      "group": "about"
+    },
+    {
+      "id": "date",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "sortValues": true,
+      "minWidth": 250,
+      "onlyOnInstancePage": true,
+      "group": "about"
+    },
+    {
+      "id": "hasMember",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "simpleList": true,
+      "minWidth": 250,
+      "onlyOnInstancePage": true,
+      "group": "related"
+    },
+    {
+      "id": "officialWebsite",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": true,
+      "sortValues": true,
+      "simpleList": true,
+      "minWidth": 250,
+      "onlyOnInstancePage": true,
+      "group": "external resources"
+    }
+  ]
+}

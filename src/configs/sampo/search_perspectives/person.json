@@ -1,0 +1,519 @@
+{
+  "id": "person",
+
+  "endpoint": {
+    "url": "https://fuseki.dipintra.it/wendangSampo/sparql",
+    "useAuth": false,
+    "prefixesFile": "SparqlQueriesPrefixes.js"
+  },
+
+  "sparqlQueriesFile": "SparqlQueriesPerson.js",
+  "baseURI": "http://wendang-project.github.io/data/item",
+  "URITemplate": "<BASE_URI>/<LOCAL_ID>",
+  "facetClass": "ns3:Q215627",
+
+  "frontPageImage": "main_page/people.png",
+  "searchMode": "faceted-search",
+  "defaultActiveFacets": ["prefLabel"],
+  "defaultTab": "table",
+  "defaultInstancePageTab": "table",
+
+  "maps": {
+    "peopleWorkPlaces": {
+      "center": [22.43, 10.37],
+      "zoom": 2
+    },
+    "peopleBirthPlaces": {
+      "center": [22.43, 10.37],
+      "zoom": 2
+    }
+  },
+
+  "resultClasses": {
+    "person": {
+      "paginatedResultsConfig": {
+        "tabID": 0,
+        "component": "ResultTable",
+        "tabPath": "table",
+        "tabIcon": "ViewList",
+        "propertiesQueryBlock": "personProperties",
+        "pagesize": 15
+      },
+      "instanceConfig": {
+        "propertiesQueryBlock": "personProperties",
+        "instancePageResultClasses": {
+          "instancePageTable": {
+            "tabID": 0,
+            "component": "InstancePageTable",
+            "tabPath": "table",
+            "tabIcon": "CalendarViewDay"
+          }
+        }
+      }
+    },
+    "peopleWorkPlaces": {
+        "tabID": 1,
+        "component": "LeafletMap",
+        "tabPath": "peopleWorkLocations",
+        "tabIcon": "LocationOn",
+        "sparqlQuery": "peopleWorkPlacesQuery",
+        "facetClass": "person",
+        "filterTarget": "person",
+        "resultMapper": "mapPlaces",
+        "showInstanceCountInClusters": true,
+        "instanceConfig": {
+          "propertiesQueryBlock": "placePeopleInfoWindow",
+          "relatedInstances": "peopleWorkingAtPlace",
+          "filterTarget": "related__id",
+          "createPopUpContent": "createPopUpContentAs"
+        }
+    },
+    "peopleBirthPlaces": {
+        "tabID": 2,
+        "component": "LeafletMap",
+        "tabPath": "peopleBirthLocations",
+        "tabIcon": "LocationOn",
+        "sparqlQuery": "peopleBirthPlacesQuery",
+        "facetClass": "person",
+        "filterTarget": "person",
+        "resultMapper": "mapPlaces",
+        "showInstanceCountInClusters": true,
+        "instanceConfig": {
+          "propertiesQueryBlock": "birthPlacePeopleInfoWindow",
+          "relatedInstances": "peopleBornAtPlace",
+          "filterTarget": "related__id",
+          "createPopUpContent": "createPopUpContentAs"
+        }
+    },
+    "peopleByProperty": {
+        "tabID": 3,
+        "component": "ApexCharts",
+        "doNotRenderOnMount": true,
+        "tabPath": "pie_chart",
+        "tabIcon": "PieChart",
+        "facetClass": "person",
+        "dropdownForResultClasses": true,
+        "defaultResultClass": "peopleByGender",
+        "resultClasses": {
+          "peopleByGender": {
+            "sparqlQuery": "peopleByGenderQuery",
+            "filterTarget": "people",
+            "resultMapper": "mapPieChart",
+            "sliceVisibilityThreshold": 0.01,
+            "dropdownForChartTypes": true,
+            "chartTypes": [
+              {
+                "id": "pie",
+                "createChartData": "createApexPieChartData"
+              },
+              {
+                "id": "bar",
+                "createChartData": "createApexBarChartData"
+              }
+            ]
+          },
+          "peopleByRole": {
+            "sparqlQuery": "peopleByRoleQuery",
+            "filterTarget": "people",
+            "resultMapper": "mapPieChart",
+            "sliceVisibilityThreshold": 0.01,
+            "dropdownForChartTypes": true,
+            "chartTypes": [
+              {
+                "id": "pie",
+                "createChartData": "createApexPieChartData"
+              },
+              {
+                "id": "bar",
+                "createChartData": "createApexBarChartData"
+              }
+            ]
+          },
+          "peopleByCalligraphicTraining": {
+            "sparqlQuery": "peopleByCalligraphicTrainingQuery",
+            "filterTarget": "people",
+            "resultMapper": "mapPieChart",
+            "sliceVisibilityThreshold": 0.01,
+            "dropdownForChartTypes": true,
+            "chartTypes": [
+              {
+                "id": "pie",
+                "createChartData": "createApexPieChartData"
+              },
+              {
+                "id": "bar",
+                "createChartData": "createApexBarChartData"
+              }
+            ]
+          },
+          "peopleByFieldOfStudy": {
+            "sparqlQuery": "peopleByFieldOfStudyQuery",
+            "filterTarget": "people",
+            "resultMapper": "mapPieChart",
+            "sliceVisibilityThreshold": 0.01,
+            "dropdownForChartTypes": true,
+            "chartTypes": [
+              {
+                "id": "pie",
+                "createChartData": "createApexPieChartData"
+              },
+              {
+                "id": "bar",
+                "createChartData": "createApexBarChartData"
+              }
+            ]
+          }
+        }
+     }    
+  },
+
+  "properties": [
+    {
+      "id": "image",
+      "valueType": "image",
+      "previewImageHeight": 100,
+      "makeLink": true,
+      "externalLink": true,
+      "sortValues": true,
+      "numberedList": false,
+      "hideHeader": true
+    },
+    {
+      "id": "uri",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": true,
+      "sortValues": true,
+      "numberedList": false,
+      "onlyOnInstancePage": true
+    },
+    {
+      "id": "prefLabel",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "linkStyle": "primary",
+      "minWidth": 250
+    },
+    {
+      "id": "otherName",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "onlyOnInstancePage": true,
+      "minWidth": 250,
+      "group": "personal information"
+    },
+    {
+      "id": "tag",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "instanceInlineList": true,
+      "minWidth": 250,
+      "onlyOnInstancePage": true,
+      "group": "personal information"
+    },
+    {
+      "id": "pseudonym",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "instanceInlineList": true,
+      "inlineSeparator": ", ",
+      "minWidth": 250,
+      "onlyOnInstancePage": true,
+      "group": "personal information"
+    },
+    {
+      "id": "role",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "mainInlineList": true,
+      "instanceInlineList": true,
+      "inlineSeparator": ", ",
+      "linkStyle": "primary",
+      "disableSort": true,
+      "minWidth": 250,
+      "group": "work & education"
+    },
+    {
+      "id": "description",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "onlyOnInstancePage": true,
+      "expandedOnInstancePage": false,
+      "minWidth": 250
+    },
+    {
+      "id": "gender",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "onlyOnInstancePage": true,
+      "minWidth": 250,
+      "group": "personal information"
+    },
+    {
+      "id": "birthDate",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "onlyOnInstancePage": false,
+      "disableSort": true,
+      "minWidth": 120,
+      "group": "personal information"
+    },
+    {
+      "id": "birthPlace",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "instanceInlineList": true,
+      "inlineSeparator": ", ",
+      "onlyOnInstancePage": true,
+      "minWidth": 120,
+      "group": "personal information"
+    },
+    {
+      "id":"countryOfCitizenship",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": true,
+      "sortValues": true,
+      "numberedList": false,
+      "onlyOnInstancePage": true,
+      "minWidth": 120,
+      "group": "personal information"
+    },
+    {
+      "id": "deathDate",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "onlyOnInstancePage": true,
+      "minWidth": 250,
+      "group": "personal information"
+    },
+    {
+      "id": "deathPlace",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "onlyOnInstancePage": true,
+      "minWidth": 250,
+      "group": "personal information"
+    },
+    {
+      "id": "placeOfActivity",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "instanceInlineList": true, 
+      "inlineSeparator": ", ",
+      "onlyOnInstancePage": true,
+      "minWidth": 250,
+      "group": "work & education"
+    },
+    {
+      "id": "nativeLanguage",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "instanceInlineList": true, 
+      "inlineSeparator": ", ",
+      "onlyOnInstancePage": true,
+      "minWidth": 250,
+      "group": "personal information"
+    },
+    {
+      "id": "usesLanguage",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "instanceInlineList": true, 
+      "inlineSeparator": ", ",
+      "onlyOnInstancePage": true,
+      "minWidth": 250,
+      "group": "personal information"
+    },
+    {
+      "id": "fieldOfStudy",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "instanceInlineList": true,
+      "inlineSeparator": ", ",
+      "onlyOnInstancePage": true,
+      "minWidth": 250,
+      "group": "work & education"
+    },
+    {
+      "id": "calligraphicTraining",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "instanceInlineList": true,
+      "inlineSeparator": ", ",
+      "numberedList": false,
+      "onlyOnInstancePage": true,
+      "minWidth": 250,
+      "group": "work & education"
+    },
+    {
+      "id": "isMemberOf",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "instanceInlineList": true,
+      "inlineSeparator": ", ",
+      "numberedList": false,
+      "onlyOnInstancePage": true,
+      "minWidth": 250,
+      "group": "related"
+    },
+    {
+      "id": "isCreatorOf",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "simpleList": true,
+      "numberedList": false,
+      "sortValues": true,
+      "onlyOnInstancePage": true,
+      "minWidth": 250,
+      "group": "related"
+    },
+    {
+      "id": "isCalligrapherOf",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "simpleList": true,
+      "numberedList": false,
+      "sortValues": true,
+      "onlyOnInstancePage": true,
+      "minWidth": 250,
+      "group": "related"
+    },
+    {
+      "id": "isPerformerOf",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "simpleList": true,
+      "numberedList": false,
+      "sortValues": true,
+      "onlyOnInstancePage": true,
+      "minWidth": 250,
+      "group": "related"
+    },
+    {
+      "id": "isDesignerOf",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "simpleList": true,
+      "numberedList": false,
+      "sortValues": true,
+      "onlyOnInstancePage": true,
+      "minWidth": 250,
+      "group": "related"
+    },
+    {
+      "id": "isCuratorOf",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "simpleList": true,
+      "numberedList": false,
+      "sortValues": true,
+      "onlyOnInstancePage": true,
+      "minWidth": 250,
+      "group": "related"
+    },
+    {
+      "id": "isComposerOf",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "simpleList": true,
+      "numberedList": false,
+      "sortValues": true,
+      "onlyOnInstancePage": true,
+      "minWidth": 250,
+      "group": "related"
+    },
+    {
+      "id": "officialWebsite",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": true,
+      "simpleList": true,
+      "onlyOnInstancePage": true,
+      "minWidth": 250,
+      "group": "external resources"
+    } 
+  ],
+
+  "facets": {
+    "prefLabel": {
+      "containerClass": "one",
+      "facetType": "text",
+      "filterType": "textFilter",
+      "textQueryType": "regex",
+      "sortByPredicate": "ns2:P2561",
+      "textQueryProperty": "ns2:P2561"
+    },
+    "role": {
+      "containerClass": "ten",
+      "facetType": "list",
+      "filterType": "uriFilter",
+      "predicate": "ns2:P106",
+      "labelPattern": "OPTIONAL { ?id rdfs:label ?lbl } BIND(COALESCE(?lbl, ?id) AS ?prefLabel)",
+      "searchField": false,
+      "sortButton": true,
+      "sortBy": "instanceCount",
+      "sortByPredicate": "ns2:P106/rdfs:label",
+      "sortDirection": "desc",
+      "showInFacetPanel": true,
+      "pieChartButton": false
+    },
+    "gender": {
+      "containerClass": "ten",
+      "facetType": "list",
+      "filterType": "uriFilter",
+      "predicate": "ns2:P21",
+      "labelPattern": "OPTIONAL { ?id rdfs:label ?lbl } BIND(COALESCE(?lbl, ?id) AS ?prefLabel)",
+      "searchField": false,
+      "sortButton": true,
+      "sortBy": "instanceCount",
+      "sortByPredicate": "ns2:P21/rdfs:label",
+      "sortDirection": "desc",
+      "showInFacetPanel": true,
+      "pieChartButton": false
+    }
+  }
+}

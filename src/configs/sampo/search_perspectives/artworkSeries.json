@@ -1,0 +1,170 @@
+{
+    "id": "artworkSeries",
+    "endpoint": {
+        "url": "https://fuseki.dipintra.it/wendangSampo/sparql",
+        "useAuth": false,
+        "prefixesFile": "SparqlQueriesPrefixes.js"
+    },
+    "sparqlQueriesFile": "SparqlQueriesArtworkSeries.js",
+    "baseURI": "http://wendang-project.github.io/data/item",
+    "URITemplate": "<BASE_URI>/<LOCAL_ID>",
+    "facetClass": "ns3:Q7725310",
+    "frontPageImage": "main_page/visual.jpg",
+    "searchMode": "faceted-search",
+    "defaultActiveFacets": [
+        "prefLabel"
+    ],
+    "defaultTab": "table",
+    "defaultInstancePageTab": "table",
+
+    "resultClasses": {
+        "artworkSeries": {
+            "paginatedResultsConfig": {
+                "tabID": 0,
+                "component": "ResultTable",
+                "tabPath": "table",
+                "tabIcon": "ViewList",
+                "propertiesQueryBlock": "artworkSeriesProperties",
+                "pagesize": 15,
+                "sortBy": null,
+                "sortDirection": null
+            },
+            "instanceConfig": {
+                "propertiesQueryBlock": "artworkSeriesProperties",
+                "instancePageResultClasses": {
+                    "instancePageTable": {
+                        "tabID": 0,
+                        "component": "InstancePageTable",
+                        "tabPath": "table",
+                        "tabIcon": "CalendarViewDay"
+                    } 
+                }
+            }
+        },
+        "exhibitionTimeline": {
+            "tabID": 1,
+            "component": "ApexCharts",
+            "tabPath": "artworksSeriesTimeline",
+            "tabIcon": "ScatterPlot",
+            "sparqlQuery": "artworkSeriesTimelineQuery",
+            "resultMapper": "mapTimeline",
+            "createChartData": "createTimelineChartData",
+            "xaxisType": "datetime",
+            "facetClass": "artworkSeries",
+            "filterTarget": "artworkSeries",
+            "title": "Browse series of creative works by their start date"
+        }       
+    },
+    "properties": [
+        {
+            "id": "image",
+            "valueType": "image",
+            "previewImageHeight": 150,
+            "makeLink": false,
+            "externalLink": false,
+            "hideHeader": true,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "uri",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "prefLabel",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "minWidth": 250,
+            "linkStyle": "primary",
+            "group": "identification"
+        },
+        {
+            "id": "titleOtherLang",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "minWidth": 250,
+            "onlyOnInstancePage": true,
+            "group": "identification"
+        },
+        {
+            "id": "description",
+            "valueType": "object",
+            "collapsedMaxWords": 60,
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "identification"
+        },
+        {
+            "id": "creator",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "linkStyle": "primary",
+            "mainTableSimpleList": true,
+            "simpleList": true,
+            "onlyOnInstancePage": false,
+            "disableSort": true,
+            "minWidth": 150,
+            "group": "creation"
+        },
+        {
+            "id": "location",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "instanceInlineList": true,
+            "inlineSeparator": " , ",
+            "onlyOnInstancePage": true,
+            "minWidth": 250,
+            "group": "creation"
+        },
+        {
+            "id": "startTime",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "onlyOnInstancePage": true,
+            "minWidth": 150,
+            "group": "creation"
+        },
+        {
+            "id": "endTime",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "onlyOnInstancePage": true,
+            "minWidth": 150,
+            "group": "creation"
+        },
+        {
+            "id": "includesArtwork",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "simpleList": true,
+            "mainTableSimpleList": true,
+            "linkStyle": "primary",
+            "onlyOnInstancePage": false,
+            "disableSort": true,
+            "minWidth": 150,
+            "group": "related"
+        }     
+    ],
+        "facets": {
+            "prefLabel": {
+                "containerClass": "one",
+                "facetType": "text",
+                "filterType": "textFilter",
+                "textQueryType": "regex",
+                "textQueryProperty": "ns2:P1476",
+                "sortByPredicate": "ns2:P1476"
+            }
+    }
+}

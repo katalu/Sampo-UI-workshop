@@ -1,0 +1,63 @@
+{
+  "id": "personInstancePage",
+  "endpoint": {
+    "url": "http://localhost:3030/wendangSampo/sparql",
+    "useAuth": false,
+    "prefixesFile": "SparqlQueriesPrefixes.js"
+  },
+  "facetClass": "ns3:Q215627",
+  "sparqlQueriesFile": "SparqlQueriesPersonInstance.js",
+  "baseURI": "http://wendang-project.github.io/data/item",
+  "URITemplate": "<BASE_URI>/<LOCAL_ID>",
+  "resultClasses": {
+    "personInstancePage": {
+      "instanceConfig": {
+        "propertiesQueryBlock": "personInstanceProperties",
+        "instancePageResultClasses": {
+          "instancePageTable": {
+            "tabID": 0,
+            "component": "InstancePageTable",
+            "tabPath": "table",
+            "tabIcon": "CalendarViewDay"
+          },
+          "instancePageExport": {
+            "tabID": 1,
+            "component": "Export",
+            "tabPath": "export",
+            "tabIcon": "CloudDownload",
+            "pageType": "instancePage"
+          }
+        }
+      }
+    }
+  },
+  "properties": [
+    {
+      "id": "uri",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": true,
+      "sortValues": true,
+      "numberedList": false,
+      "onlyOnInstancePage": true
+    },
+    {
+      "id": "prefLabel",
+      "valueType": "literal",
+      "makeLink": false,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
+      "id": "role",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    }
+  ]
+}

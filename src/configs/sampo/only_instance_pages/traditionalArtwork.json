@@ -1,0 +1,96 @@
+{
+  "id": "traditionalArtwork",
+  "endpoint": {
+    "url": "https://fuseki.dipintra.it/wendangSampo/sparql",
+    "useAuth": false,
+    "prefixesFile": "SparqlQueriesPrefixes.js"
+  },
+  "sparqlQueriesFile": "SparqlQueriesTraditionalArtwork.js",
+  "baseURI": "http://wendang-project.github.io/data/item",
+  "URITemplate": "<BASE_URI>/<LOCAL_ID>",
+  "resultClasses": {
+    "traditionalArtwork": {
+      "instanceConfig": {
+        "propertiesQueryBlock": "traditionalArtworkProperties",
+        "instancePageResultClasses": {
+          "instancePageTable": {
+            "tabID": 0,
+            "component": "InstancePageTable",
+            "tabPath": "table",
+            "tabIcon": "CalendarViewDay"
+          }
+        }
+      }
+    }
+  },
+  "properties": [
+    {
+      "id": "uri",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": true,
+      "sortValues": true,
+      "numberedList": false,
+      "onlyOnInstancePage": true
+    },
+    {
+      "id": "prefLabel",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
+      "id": "titleOtherLang",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "minWidth": 250,
+      "onlyOnInstancePage": true,
+      "group": "identification"
+    },
+    {
+      "id": "description",
+      "valueType": "object",
+      "minWidth": 250,
+      "onlyOnInstancePage": true,
+      "group": "identification"
+    },
+    {
+      "id": "traditionalArtType",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": true,
+      "sortValues": true,
+      "numberedList": false,
+      "simpleList": true,
+      "minWidth": 250,
+      "group": "creation"
+    },
+    {
+      "id": "creator",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": true,
+      "sortValues": true,
+      "numberedList": false,
+      "simpleList": true,
+      "minWidth": 250,
+      "group": "creation"
+    },
+    {
+      "id": "date",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "minWidth": 250,
+      "onlyOnInstancePage": true,
+      "group": "creation"
+    }
+    
+  ]
+}

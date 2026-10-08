@@ -1,0 +1,229 @@
+{
+  "id": "exhibition",
+  "endpoint": {
+    "url": "https://fuseki.dipintra.it/wendangSampo/sparql",
+    "useAuth": false,
+    "prefixesFile": "SparqlQueriesPrefixes.js"
+  },
+  "sparqlQueriesFile": "SparqlQueriesExhibition.js",
+  "baseURI": "http://wendang-project.github.io/data/item",
+  "URITemplate": "<BASE_URI>/<LOCAL_ID>",
+  "facetClass": "ns3:Q464980",
+    "frontPageImage": "main_page/exhibition2.jpg",
+    "searchMode": "faceted-search",
+    "defaultActiveFacets": [
+        "prefLabel"
+    ],
+    "defaultTab": "table",
+    "defaultInstancePageTab": "table",
+
+    "maps": {
+        "exhibitionCreationPlaces": {
+            "center": [22.43, 10.37],
+            "zoom": 2
+        }
+    },
+
+    "resultClasses": {
+      "exhibition": {
+        "paginatedResultsConfig": {
+                "tabID": 0,
+                "component": "ResultTable",
+                "tabPath": "table",
+                "tabIcon": "ViewList",
+                "propertiesQueryBlock": "exhibitionProperties",
+                "pagesize": 15,
+                "sortBy": null,
+                "sortDirection": null
+            },
+            "instanceConfig": {
+                "propertiesQueryBlock": "exhibitionProperties",
+                "instancePageResultClasses": {
+                    "instancePageTable": {
+                        "tabID": 0,
+                        "component": "InstancePageTable",
+                        "tabPath": "table",
+                        "tabIcon": "ViewList"
+                    } 
+                }
+            }
+        },
+        "exhibitionCreationPlaces": {
+            "tabID": 1,
+            "component": "LeafletMap",
+            "tabPath": "exhibitionCreationLocations",
+            "tabIcon": "LocationOn",
+            "sparqlQuery": "exhibitionCreationPlacesQuery",
+            "facetClass": "exhibition",
+            "filterTarget": "exhibition",
+            "resultMapper": "mapPlaces",
+            "showInstanceCountInClusters": true,
+            "instanceConfig": {
+                "propertiesQueryBlock": "creationPlaceExhibitionInfoWindow",
+                "createPopUpContent": "createPopUpContentAs"
+            }
+        },
+        "exhibitionTimeline": {
+            "tabID": 2,
+            "component": "ApexCharts",
+            "tabPath": "exhibitionTimeline",
+            "tabIcon": "ScatterPlot",
+            "sparqlQuery": "exhibitionTimelineQuery",
+            "resultMapper": "mapTimeline",
+            "createChartData": "createTimelineChartData",
+            "xaxisType": "datetime",
+            "facetClass": "exhibition",
+            "filterTarget": "exhibition",
+            "title": "Browse exhibitions by their start date"
+          }    
+    },
+    "properties": [
+      {
+        "id": "uri",
+        "valueType": "object",
+        "makeLink": true,
+        "externalLink": true,
+        "sortValues": true,
+        "numberedList": false,
+        "onlyOnInstancePage": true
+      },
+      {
+        "id": "prefLabel",
+        "valueType": "object",
+        "makeLink": true,
+        "externalLink": false,
+        "linkStyle": "primary",
+        "minWidth": 250
+      },
+      {
+        "id": "titleOtherLang",
+        "valueType": "object",
+        "makeLink": true,
+        "externalLink": false,
+        "sortValues": false,
+        "numberedList": false,
+        "onlyOnInstancePage": true,
+        "minWidth": 200,
+        "group": "identification"
+      },
+      {
+        "id": "description",
+        "valueType": "object",
+        "makeLink": true,
+        "externalLink": false,
+        "sortValues": false,
+        "numberedList": false,
+        "onlyOnInstancePage": true,
+        "minWidth": 200
+      },
+      {
+        "id": "curator",
+        "valueType": "object",
+        "makeLink": true,
+        "externalLink": false,
+        "linkStyle": "primary",
+        "mainTableSimpleList": true,
+        "simpleList": true,
+        "sortValues": true,
+        "numberedList": false,
+        "disableSort": true,
+        "minWidth": 200,
+        "group": "event details"
+      },
+      {
+        "id": "organiser",
+        "valueType": "object",
+        "makeLink": false,
+        "externalLink": false,
+        "sortValues": true,
+        "numberedList": false,
+        "instanceInlineList": true,
+        "inlineSeparator": ", ",
+        "onlyOnInstancePage": true,
+        "minWidth": 250,
+        "group": "event details"
+      },
+      {
+        "id": "location",
+        "valueType": "object",
+        "makeLink": false,
+        "externalLink": false,
+        "sortValues": true,
+        "numberedList": false,
+        "mainInlineList": true,
+        "instanceInlineList": true,
+        "inlineSeparator": ", ",
+        "disableSort": true,
+        "minWidth": 150,
+        "group": "event details"
+      },
+      {
+        "id": "startTime",
+        "valueType": "object",
+        "makeLink": false,
+        "externalLink": false,
+        "sortValues": true,
+        "numberedList": false,
+        "onlyOnInstancePage": true,
+        "minWidth": 250,
+        "group": "event details"
+      },
+      {
+        "id": "endTime",
+        "valueType": "object",
+        "makeLink": false,
+        "externalLink": false,
+        "sortValues": true,
+        "numberedList": false,
+        "onlyOnInstancePage": true,
+        "minWidth": 250,
+        "group": "event details"
+      },
+      {
+        "id": "exhibitedArtist",
+        "valueType": "object",
+        "makeLink": true,
+        "externalLink": false,
+        "sortValues": true,
+        "numberedList": false,
+        "simpleList": true,
+        "onlyOnInstancePage": true,
+        "minWidth": 250,
+        "group": "related"
+      },
+      {
+        "id": "exhibitedArtwork",
+        "valueType": "object",
+        "makeLink": true,
+        "externalLink": false,
+        "sortValues": true,
+        "numberedList": false,
+        "simpleList": true,
+        "onlyOnInstancePage": true,
+        "minWidth": 250,
+        "group": "related"
+      },
+      {
+        "id": "officialWebsite",
+        "valueType": "object",
+        "makeLink": true,
+        "externalLink": true,
+        "sortValues": true,
+        "numberedList": false,
+        "simpleList": true,
+        "onlyOnInstancePage": true,
+        "minWidth": 200,
+        "group": "external resources"
+      }
+    ],
+     "facets": {
+            "prefLabel": {
+                "containerClass": "one",
+                "facetType": "text",
+                "filterType": "textFilter",
+                "textQueryType": "regex",
+                "textQueryProperty": "ns2:P1476",
+                "sortByPredicate": "ns2:P1476"
+            }
+       }
+}

@@ -1,0 +1,33 @@
+{
+    "id": "fullTextSearch",
+    "endpoint": {
+        "url": "https://fuseki.dipintra.it/wendangSampo/sparql",
+        "useAuth": false,
+        "prefixesFile": "SparqlQueriesPrefixes.js"
+    },
+    "sparqlQueriesFile": "SparqlQueriesFullTextSearch.js",
+    "propertiesQueryBlock": "fullTextSearchProperties",
+    "hideCardOnFrontPage": true,
+    "hideTopPerspectiveButton": true,
+    "searchMode": "full-text-search",
+    "properties": [
+          {
+            "id": "prefLabel",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 800
+        },
+        {
+            "id": "type",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 200
+        }
+    ]
+}

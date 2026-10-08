@@ -1,0 +1,135 @@
+{
+    "portalID": "sampo",
+    "rootUrl": "",
+    "perspectives": {
+        "searchPerspectives": [
+            "visualArts",
+            "performingArts",
+            "graffitiArt",
+            "decorativeAppliedArts",
+            "calliWritingUnit",
+            "person", 
+            "artworkSeries",
+            "exhibition",
+            "fullTextSearch"
+        ],
+        "onlyInstancePages": [
+            "literaryWork",
+            "traditionalArtwork",
+            "artisticCollective",
+            "organisation"
+        ]
+    },
+    "localeConfig": {
+        "defaultLocale": "en",
+        "readTranslationsFromGoogleSheets": false,
+        "availableLocales": [
+            {
+                "id": "en",
+                "label": "English",
+                "filename": "localeEN.json"
+            }
+        ]
+    },
+    "sitemapConfig": {
+        "baseUrl": "https://sampo-ui.demo.seco.cs.aalto.fi",
+        "langPrimary": "en",
+        "langSecondary": "fi",
+        "outputDir": "./src/server/sitemap_generator",
+        "sitemapUrl": "https://sampo-ui.demo.seco.cs.aalto.fi/sitemap",
+        "sitemapInstancePageQuery": "sitemapInstancePageQuery"
+    },
+    "knowledgeGraphMetadataConfig": {
+        "showTable": false,
+        "perspective": "person" 
+    },
+    "layoutConfig": {
+        "colorPalette": {
+            "primary": {
+                "main": "#212121"
+            },
+            "secondary": {
+                "main": "#EB1806"
+            }
+        },
+        "hundredPercentHeightBreakPoint": 900,
+        "reducedHeightBreakpoint": 1920,
+        "tabHeight": 58,
+        "paginationToolbarHeight": 37,
+        "tableFontSize": "0.8rem",
+        "topBar": {
+            "logoImage": "logos/logoWrite.jpg",
+            "logoTextTransform": "none",
+            "hideLogoTextOnMobile": true,
+            "showLanguageButton": false,
+            "feedbackLink": "https://link.webropolsurveys.com/...",
+            "externalInstructions": false,
+            "externalAboutPage": false,
+            "reducedHeight": 48,
+            "defaultHeight": 64,
+            "mobileMenuBreakpoint": 1360,
+            "infoDropdown": [
+                {
+                    "id": "about",
+                    "translatedText": "aboutThePortal",
+                    "internalLink": "/about"
+                },
+                {
+                    "id": "blog",
+                    "externalLink": true,
+                    "translatedUrl": "blogUrl",
+                    "translatedText": "blog"
+                }
+            ]
+        },
+        "mainPage": {
+            "bannerImage": "main_page/hero.jpg",
+            "bannerBackround": "url(/main_page/hero.jpg)",
+            "bannerMobileHeight": 150,
+            "bannerReducedHeight": 220,
+            "bannerDefaultHeight": 300,
+            "wrapSubheading": true
+        },
+        "infoHeader": {
+            "default": {
+                "height": 30,
+                "expandedContentHeight": 160,
+                "headingVariant": "h4",
+                "infoIconFontSize": 40
+            },
+            "reducedHeight": {
+                "height": 30,
+                "expandedContentHeight": 100,
+                "headingVariant": "h6",
+                "infoIconFontSize": 32
+            }
+        },
+        "footer": {
+            "reducedHeight": 44,
+            "defaultHeight": 64
+        }
+    },
+    "mapboxConfig": {
+        "mapboxStyle": "light-v10"
+    },
+    "yasguiConfig": {
+        "yasguiBaseURL": "https://yasgui.triply.cc",
+        "yasguiParams": {
+            "contentTypeConstruct": "text/turtle",
+            "contentTypeSelect": "application/sparql-results+json",
+            "endpoint": "http://10.42.124.95:9999/blazegraph/sparql",
+            "requestMethod": "POST",
+            "tabTitle": "Exported query"
+        }
+    },
+    "documentFinderConfig": {
+        "apiURL": "https://data.finlex.fi/document-finder-backend"
+    },
+    "temporalMapConfig": {
+        "sliderDuration": {
+            "halfSpeed": 1200,
+            "normalSpeed": 600,
+            "doubleSpeed": 300
+        }
+    }
+}
